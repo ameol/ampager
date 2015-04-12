@@ -4,10 +4,10 @@
 引入jquery.js和ampager.js
 例如：
 
-`<div id="datacontainer"></div>
-<div id="pager"></div>
-<script type="text/javascript">
-    (function() {
+    <div id="datacontainer"></div>
+    <div id="pager"></div>
+    <script type="text/javascript">
+       (function() {
         $('#datacontainer').AmPager({
             'pagerName': 'pager',
             'mode': 'static',
@@ -17,7 +17,7 @@
             'listCount': 7
         });
     })();
-</script>`
+    </script>
 
 具体看代码实例，staticpager.php是第一种数据一次性读取分页（静态分页），
 urlpager.php是第二种url跳转分页，
