@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>AjaxPager</title>
+    <link href="css/plugins.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Ajax分页</h3>
+    <h3>搜索条件</h3>
+    <div>
+        <div>姓名：<input type="text" id="txt_name" /></div>
+        <div>职业：<input type="text" id="txt_career" /></div>
+        <button id="btn_ok">查询</button>
+    </div>
+
+    <div id="tab_content"><ul id="ajax_content" style="list-style: none"></ul></div>
+    <div id='ajax_pager' class='pager'></div>
+    
+    <script src="js/jquery-1.9.0.js"></script>
+    <script src="js/AmPager.js"></script>
+    <script type="text/javascript">
+       (function() {
+            var size = 5; //每页5条数据
+            
+            //组装数据
+            var inintData = function(e, data) {
+                e.html(''); //先清空遗留数据
+                var html = '';
+                for (var i = 0; i < data.list.length; i++) {
+                    html += "<li>" + data.list[i].name  + "---" + data.list[i].age + "---" + data.list[i].career+"</li>";
+                }
+                e.html(html);
+            };
+            var loadData = function () {
+                var loadFlag = false;
+                var par_name = $('#txt_name').val(); //查询条件
+                var par_career = $('#txt_career').val(); //查询条件
+                var $content = $('#ajax_content'); //数据列表容器
+
+                $content.html('<li>loding...</li>'); //就是加个效果
+
+                $.getJSON('data_ajax.php', { "index": 1, "size": size, 'name': par_name, 'career': par_career }, function(data) { //第一次先访问第一页获取总条数
+                    //组装数据
+                    inintData($content, data); //第一次得到的数据
+                    //设置分页
+                    $content.AmPager({
+                        'pagerName': 'ajax_pager',
+                        'mode': 'ajax',
+                        'needNumInput': true,
+                        'dataCount': data.totalCount, //后台获取总条数
+                        'viewCount': size, //配置每页显示
+                        'listCount': 7,
+                        'callback': function(e, i, c) { //分别代表e：数据父容器，i：当前页，c：每页显示多少条数据
+                            //(首次加载不进入此步骤)
+                            if (!loadFlag)
+                                return false;
+                            e.html('<li>loding...</li>');
+                            $.getJSON('data_ajax.php', { "index": i, "size": c, 'name': par_name, 'career': par_career }, function(data2) {
+                                inintData(e, data2); //这里用$content也行
+                            });
+                        }
+                    });
+                    loadFlag = true;
+                });
+            };
+            //页面第一次加载并分页
+            loadData();
+            //查询加载并分页
+            $('#btn_ok').click(function () {
+                loadData();
+            });
+        })();
+    </script>
+</body>
+</html>
