@@ -3,6 +3,7 @@
 使用方法
 引入jquery.js和ampager.js
 例如：
+···HTML
 <div id="datacontainer"></div>
 <div id="pager"></div>
 <script type="text/javascript">
