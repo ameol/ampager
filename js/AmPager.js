@@ -1,8 +1,8 @@
 /*
- *  AmPager by ameol
+ *  ampager by ameol
  *  2013.4.14第一版,2015.4修改一些bug,完善了一些功能
  *  一款简单的分页插件，支持三种分页方式，数据一次性读取分页，url跳转分页，ajax分页
- *  插件通过js来实现分页。不是用于分页容器，而是用于内容容器。$('#content').AmPager();
+ *  插件通过js来实现分页。不是用于分页容器，而是用于内容容器。$('#content').ampager();
     分为三种分页方式，第一种静态方式分页（mode:"static"），主要是一次性读取数据后的数据分页。
     第二种url分页（mode:"url"），传入每页显示几条和数据总数就行，它会在url地址中分配一个名为p参数(可以修改名称)，用于指定当前页。
     第二种ajax分页（mode:"ajax"），通过ajax请求数据分页，可以通过传入一个callback函数，来执行后续操作。例如：
@@ -19,7 +19,7 @@
 ;(function ( $, window, document, undefined ) {
     "use strict";
     // Create the defaults once
-    var pluginName = 'AmPager',
+    var pluginName = 'ampager',
         defaults = {
             pagerName: 'pager',			//分页的容器（默认为pager）
 			viewCount: 5,				//可显示多少条数据

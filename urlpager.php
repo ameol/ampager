@@ -31,10 +31,10 @@
     <div id="url_pager" class="pager"></div>
 
     <script src="js/jquery-1.9.0.js"></script>
-    <script src="js/AmPager.js"></script>
+    <script src="js/ampager.js"></script>
     <script type="text/javascript">
         (function() {
-            $('#url_content').AmPager({
+            $('#url_content').ampager({
                 'pagerName': 'url_pager',
                 'mode': 'url',
                 'needNumInput': true,

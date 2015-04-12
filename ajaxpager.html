@@ -17,7 +17,7 @@
     <div id='ajax_pager' class='pager'></div>
     
     <script src="js/jquery-1.9.0.js"></script>
-    <script src="js/AmPager.js"></script>
+    <script src="js/ampager.js"></script>
     <script type="text/javascript">
        (function() {
             var size = 5; //每页5条数据
@@ -43,7 +43,7 @@
                     //组装数据
                     inintData($content, data); //第一次得到的数据
                     //设置分页
-                    $content.AmPager({
+                    $content.ampager({
                         'pagerName': 'ajax_pager',
                         'mode': 'ajax',
                         'needNumInput': true,

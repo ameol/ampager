@@ -19,10 +19,10 @@
      </div>
     <div id="static_pager" class="pager"></div>
     <script src="js/jquery-1.9.0.js"></script>
-    <script src="js/AmPager.js"></script>
+    <script src="js/ampager.js"></script>
     <script type="text/javascript">
         (function() {
-            $('#static_content').AmPager({
+            $('#static_content').ampager({
                 'pagerName': 'static_pager',
                 'mode': 'static',
                 'needNumInput': true,

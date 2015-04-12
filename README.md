@@ -8,7 +8,7 @@
     <div id="pager"></div>
     <script type="text/javascript">
        (function() {
-        $('#datacontainer').AmPager({
+        $('#datacontainer').ampager({
             'pagerName': 'pager',
             'mode': 'static',
             'needNumInput': true,
