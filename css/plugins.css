@@ -19,11 +19,13 @@ body {
     margin-right: 5px;
     margin-bottom: 5px;
 }
-
+/*页码选中样式*/
 .pager .selectno {
     background: #26B;
     color: #fff;
     border: 1px solid #AAE;
 }
+/*输入框样式*/
 .pager .numinput{ width: 50px;}
-.pager .numbutton{}
+/*输入框右侧按钮样式*/
+.pager .numbutton{margin: 0 5px}

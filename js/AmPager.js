@@ -1,9 +1,9 @@
 /*
  *  Project:	AmPager
- *  Description:	分页插件
+ *  Description:	一款简单的分页插件，支持三种分页方式，数据一次性读取分页，url跳转分页，ajax分页
  *  Author:		ameol
  *  License:	v1.0
- *  date：      2013.4.14创建
+ *  date：      2013.4.14创建,2015.4.12修改后发布
  *  summary：   插件通过js来实现分页。不是用于分页容器，而是用于内容容器。$('#content').AmPager();
                 分为三种分页方式，第一种静态方式分页（mode:"static"），主要是一次性读取数据后的数据分页。
                 第二种url分页（mode:"url"），传入每页显示几条和数据总数就行，它会在url地址中分配一个名为p参数(可以修改名称)，用于指定当前页。
@@ -25,7 +25,7 @@
         defaults = {
             pagerName: 'pager',			//分页的容器（默认为pager）
 			viewCount: 5,				//可显示多少条数据
-			dataCount: 0,				//如果后台取数据，总数多少（静态的不用）
+			dataCount: 0,				//如果后台取数据，总数多少（静态分页不用）
 			selectClass: 'selectno',	//选中的样式
 			listCount:10,				//显示多少个分页码（不包括前一页，后一页）
 			enablePrevNext:true,		//允许显示前一页后一页
